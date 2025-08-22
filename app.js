@@ -6,25 +6,37 @@ console.log("hello world");
 
 //relative path for local image OR link to the image
 //STEP 1
+
 const images = [
   {
-    url: "url",
-    altText: "altTest1",
+    src: "WK2ProjectAssignment/autumn bella.jpg",
+    altText: "Bella's close-up autumnal smile",
   },
   {
-    url: "url",
-    altText: "altTest2",
+    src: "WK2ProjectAssignment/bella autumn distance.jpg",
+    altText: "Bella's distant autumnal pose",
   },
   {
-    url: "url",
-    altText: "altTest3",
+    src: "WK2ProjectAssignment/bella smile.jpg",
+    altText: "Bella's happiest smile",
+  },
+  {
+    src: "WK2ProjectAssignment/bella bluebell path.jpg",
+    altText: "Bella's queenly pose",
+  },
+  {
+    src: "WK2ProjectAssignment/playful field smile.jpg",
+    altText: "Bella spring collection smile",
   },
 ];
+
+//function creatThumbnails-container() {
+//thumbnail-container
 
 // TODO: i need to create my thumbnail
 //function createThumbnails(){
 //select DOM element (thumbnail container) to contain our thumbnails
-//this is a repetitive task ----> loop through through array using length property
+//this is a repetitive task ----> loop through array using length property
 //inside the loop, we need
 //-create image element
 //-update the src and alt attributes to match those in the array(paraments)
