@@ -34,3 +34,18 @@ const images = [
 //}
 
 //TODO: i need to create my large images
+//created when click on thumbail which creates a copy underneath
+//event handler for thumbnail events
+//function createLargeImagesHandler(){
+//delete current image
+//select the large image-container
+//delete the current image in the large-image container
+//largeImageContainer.innerHTML = null OR ""
+//create an image
+//update src and alt values
+//add a className for styling
+//append the image to the container
+//}
+
+//add this event handler to the thumbnail container
+//call the createThumbnail function
