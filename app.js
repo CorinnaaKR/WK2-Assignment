@@ -1,24 +1,4 @@
-console.log("hello world");
-
-//TODO: i need to store my image data
-//images stored locally or images stored remotely (unsplash...)
-//each image is an object (mnost efficient way)
-
-//relative path for local image OR link to the image
-//STEP 1
-
-// TODO: i need to create my thumbnail
-//select DOM element (thumbnail container) to contain our thumbnails
-//this is a repetitive task ----> loop through array using length property
-//inside the loop, we need
-//-create image element
-//-update the src and alt attributes to match those in the array(paraments)
-//give each image a className (.imgclassName)
-// our fresh new img needs attributes to work properly!
-//we want the values for them to be pulled from the array above!
-//add event listener to each image ---> the event handler of this listener is the function you will write to create large images
-// - append the created images to the thumbnail-container
-//}
+//console.log("hello world");
 
 const images = [
   {
@@ -49,7 +29,7 @@ const images = [
 ];
 
 function createThumbnails() {
-  thumbnailscontainer = document.querySelector("#thumbnails-container");
+  thumbnailsContainer = document.querySelector("#thumbnailsContainer");
   for (let i = 0; i < images.length; i++) {
     const thumbnailImage = document.createElement("img");
 
@@ -57,23 +37,44 @@ function createThumbnails() {
     thumbnailImage.alt = images[i].altText;
     thumbnailImage.className = images[i].className;
 
-    thumbnailscontainer.appendChild(thumbnailImage);
-    thumbnailImage.addEventListener("click", () => {});
+    thumbnailsContainer.appendChild(thumbnailImage);
+    thumbnailImage.addEventListener("click", function () {
+      createLargeImagesHandler(i);
+    });
   }
 }
-function createLargeImagesHandler() {
-  document.querySelector("#large-image-container");
-  largeImages.innerHTML = null;
+function createLargeImagesHandler(i) {
+  const largeImageContainer = document.querySelector("#largeImageContainer");
   const largeImages = document.createElement("img");
-  img.src = images.src[i];
-  img.alt = images.altText[i];
-  img.className = largeImages.className[i];
+  largeImageContainer.innerHTML = null;
+  largeImages.src = images[i].src;
+  largeImages.alt = images[i].altText;
+  largeImages.className = images[i].className;
 
-  large - image - container.appendChild(img);
+  largeImageContainer.appendChild(largeImages);
 }
 
-//createThumbnails();
+createThumbnails();
 
+//TODO: i need to store my image data
+//images stored locally or images stored remotely (unsplash...)
+//each image is an object (mnost efficient way)
+
+//relative path for local image OR link to the image
+//STEP 1
+
+// TODO: i need to create my thumbnail
+//select DOM element (thumbnail container) to contain our thumbnails
+//this is a repetitive task ----> loop through array using length property
+//inside the loop, we need
+//-create image element
+//-update the src and alt attributes to match those in the array(paraments)
+//give each image a className (.imgclassName)
+// our fresh new img needs attributes to work properly!
+//we want the values for them to be pulled from the array above!
+//add event listener to each image ---> the event handler of this listener is the function you will write to create large images
+// - append the created images to the thumbnail-container
+//}
 //TODO: i need to create my large images
 //created when click on thumbail which creates a copy underneath
 //event handler for thumbnail events
