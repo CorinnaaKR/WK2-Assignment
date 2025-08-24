@@ -7,6 +7,19 @@ console.log("hello world");
 //relative path for local image OR link to the image
 //STEP 1
 
+// TODO: i need to create my thumbnail
+//select DOM element (thumbnail container) to contain our thumbnails
+//this is a repetitive task ----> loop through array using length property
+//inside the loop, we need
+//-create image element
+//-update the src and alt attributes to match those in the array(paraments)
+//give each image a className (.imgclassName)
+// our fresh new img needs attributes to work properly!
+//we want the values for them to be pulled from the array above!
+//add event listener to each image ---> the event handler of this listener is the function you will write to create large images
+// - append the created images to the thumbnail-container
+//}
+
 const images = [
   {
     src: "WK2ProjectAssignment/autumn bella.jpg",
@@ -35,33 +48,31 @@ const images = [
   },
 ];
 
-// TODO: i need to create my thumbnail
-//select DOM element (thumbnail container) to contain our thumbnails
-//this is a repetitive task ----> loop through array using length property
-//inside the loop, we need
-//-create image element
-//-update the src and alt attributes to match those in the array(paraments)
-//give each image a className (.imgclassName)
-// our fresh new img needs attributes to work properly!
-//we want the values for them to be pulled from the array above!
-//add event listener to each image ---> the event handler of this listener is the function you will write to create large images
-// - append the created images to the thumbnail-container
-//}
-
 function createThumbnails() {
-  document.querySelector(".image-container");
+  thumbnailscontainer = document.querySelector("#thumbnails-container");
   for (let i = 0; i < images.length; i++) {
-    const img = document.createElement("img");
+    const thumbnailImage = document.createElement("img");
 
-    img.src = images.src[i];
-    img.alt = images.altText[i];
-    img.className = images.className[i];
-    console.log(img);
-    function createLargeImages() {}
-    img.addEventListener("click", createLargeImages);
+    thumbnailImage.src = images[i].src;
+    thumbnailImage.alt = images[i].altText;
+    thumbnailImage.className = images[i].className;
+
+    thumbnailscontainer.appendChild(thumbnailImage);
+    thumbnailImage.addEventListener("click", () => {});
   }
-  imageContainer.appendChild(img);
 }
+function createLargeImagesHandler() {
+  document.querySelector("#large-image-container");
+  largeImages.innerHTML = null;
+  const largeImages = document.createElement("img");
+  img.src = images.src[i];
+  img.alt = images.altText[i];
+  img.className = largeImages.className[i];
+
+  large - image - container.appendChild(img);
+}
+
+//createThumbnails();
 
 //TODO: i need to create my large images
 //created when click on thumbail which creates a copy underneath
